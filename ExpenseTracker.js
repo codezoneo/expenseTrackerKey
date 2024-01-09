@@ -42,9 +42,16 @@ function ExpenseTracker({ onAddExpense, expenses }) {
     setEnteredDate("");
   };
 
-  const filteredExpenses = expenses.filter((expense) =>
-    expense.title.toLowerCase().includes(filter.toLowerCase())
-  );
+  // ...
+
+const filteredExpenses = expenses
+  ? expenses.filter((expense) =>
+      expense.title.toLowerCase().includes(filter.toLowerCase())
+    )
+  : [];
+
+
+
 
   return (
     <div className="expense-tracker">
